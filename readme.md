@@ -2,15 +2,59 @@ Tessel 2 Garage Door Controller
 ===============================
 By [John M. Wargo](www.johnwargo.com)
 
-Bacon ipsum dolor amet pork chop chuck hamburger, ground round boudin frankfurter flank fatback chicken pork filet mignon meatloaf ham kevin. Shoulder meatloaf turducken tenderloin frankfurter, pastrami sausage ham fatback flank. Sirloin meatball leberkas pork chop cupim boudin frankfurter short ribs shank pancetta bresaola shoulder. Leberkas capicola jowl shankle. Ham hock turducken ball tip tongue, shank ground round pork belly pork chop brisket sausage turkey shoulder kielbasa. Prosciutto boudin landjaeger leberkas corned beef jerky. Doner leberkas ribeye, sausage chicken jowl biltong alcatra turkey hamburger.
+This project is a super simple garage door controller built using the [Tessel 2](https://tessel.io/) development platform and a [Tessel relay module](https://tessel.io/modules#module-relay). The relay module connects to your garage door in parallel with the existing garage door button and simulates a button press by shorting the contacts across the relay.
 
-Venison beef jerky, cupim meatball shoulder doner capicola shank. Short loin venison pancetta, shankle pork chop strip steak bacon pork sirloin frankfurter jerky ground round landjaeger andouille hamburger. Sausage corned beef picanha swine filet mignon rump kevin pig meatball drumstick alcatra. Bresaola porchetta sirloin, filet mignon pork chop sausage prosciutto kevin jowl pastrami bacon beef ribs tenderloin drumstick. Short loin turducken shankle frankfurter brisket salami beef porchetta. Kielbasa turducken tri-tip frankfurter, drumstick prosciutto leberkas brisket ground round cow tail tongue spare ribs shank.
+The Tessel development board runs a simple web server application that: 
 
-Short loin strip steak alcatra pancetta, ham meatball beef ribs spare ribs swine pork chop pastrami tongue salami chicken. Short ribs boudin tail meatball jowl tenderloin frankfurter, sirloin beef ribs chicken brisket swine. Cupim ham pork venison, tenderloin strip steak salami ground round flank pork belly beef sausage biltong shank. Bacon corned beef ball tip, turkey drumstick chuck frankfurter jerky short ribs tail bresaola beef ribs. Bresaola t-bone drumstick strip steak jerky rump.
++ Serves a simple web page (shown in the figure below)
++ Responds to requests from the web application
++ Triggers the relay to 'push' the garage door button
 
-Turducken doner flank, cupim beef ribs turkey pancetta drumstick leberkas. Turducken cupim pancetta pastrami beef bresaola chuck jowl tail kevin sirloin fatback pork belly tongue. Corned beef salami drumstick spare ribs. Pancetta ribeye ham hock tri-tip doner meatloaf bresaola tenderloin biltong. Meatball tri-tip spare ribs, tongue ribeye ham hock ham pork chop andouille alcatra. Andouille pork loin picanha, sausage sirloin ribeye corned beef short loin salami bacon pork chop swine kevin t-bone.
+To build this project, you'll need the following:
 
-Kielbasa shank pastrami porchetta. Kevin chicken sirloin, sausage tri-tip turducken ball tip spare ribs jerky. Bacon jerky salami leberkas ball tip chicken strip steak spare ribs rump short ribs shank pastrami sausage. Ham spare ribs pig shank. Tail pork pork belly, tri-tip bresaola venison shank. Ribeye shoulder beef meatball, swine ball tip chuck.
++ [Tessel 2 development board](https://tessel.io/)
++ [Tessel Relay module](https://tessel.io/modules#module-relay)
++ [5V, Micro USB power supply](https://www.adafruit.com/products/1995)
++ 20ga wire 
+
+**Note:** *The development board is available in the US from Sparkfun, but they don't carry the relay module, so I ordered both from Seed Studio (China).*
+
+Follow the instructions on the [Tessel web site](http://tessel.github.io/t2-start/) to setup your development system and connect the Tessel board. Be sure to update the Tessel board's firmware to the latest version and connect the device to your Wi-Fi network. Next, disconnect the USB cable from the Tessel board then attach the relay module to the Tessel's module A port. 
+
+Copy the project's source code to a folder on your development system, then open a terminal window and navigate to the folder where you copied the files.
+Connect the Tessel to your development system using a USB cable and test the server process using the following command:
+
+	t2 run server.js 
+
+The application should load and display the following output:
+
+	INFO Looking for your Tessel...
+	INFO Connected to tessel-gdo.
+	INFO Building project.
+	INFO Writing project to RAM on tessel-gdo (16.384 kB)...
+	INFO Deployed.
+	INFO Running server.js...
+	Server running at http://192.168.1.168:8080/
+	Initializing relay module
+	Relay command completed
+	Relay command completed
+	Relay module initialized
+
+**Note:** *In this example, I'd renamed my Tessel device to 'tessel-gdo' (for 'Tessel Garage Door Opener'), your output will properly reflect the name of your Tessel device.* 
+
+At this point, you can open your browser of choice and navigate to the URL provided in the listed output (http://192.168.1.168:8080) to access the web application included with this project (shown below).
+
+![Tessel Garage Door Controller Web Application](http://johnwargo.com/files/tessel-gdc-web-app.png)
+ 
+When you press the button in the web app, you should see the blue user LED illuminate for half a second and hear the relay click. 
+
+Deploy the project's server.js file to the device using the following command:
+
+	t2 push server.js  
+
+This saves the server app to the device so it runs every time you power on the Tessel device.
+
+Finally, connect a length of wire between the relay contacts and the garage door button contacts, provide power to the Tessel device and you're all ready to go.
 
 ***
 

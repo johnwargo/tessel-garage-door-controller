@@ -32,22 +32,19 @@
     <div class="page-header">
         <h1>Tessel Garage Door Controller</h1>
     </div>
-    <p>Bacon ipsum dolor amet flank pork capicola ground round doner ham hock venison. Swine tail alcatra, shankle
-        leberkas jowl bresaola sausage porchetta boudin flank biltong pork loin chicken pancetta. Chicken beef ribs
-        sausage bresaola brisket capicola tail, jowl rump pastrami. Corned beef chuck salami, filet mignon fatback
-        jowl swine sirloin.</p>
+    <p>Tap or click the 'Push Garage Door Button' button below to 'push' the remote garage door button. The app doesn't know anything about the current position of the door (up or down), so all it can do is push the button remotely and hope for the best.</p>
     <p><a class="btn btn-primary btn-lg" href="#" role="button" onclick="pushRemoteButton()">Push Garage Door Button</a></p>
 </div>
 
 <script type="text/javascript">
     function pushRemoteButton() {
-        // Create a new XHR for communicating requests to our Tessel server
+        // Create a new XHR for communicating requests to the Tessel device
         var req = new XMLHttpRequest();
         req.open('GET', '/gdb');
-        // Once the request gets a successful response, update that statusNode with the status of the LED.
+        // Once the request gets a successful response, update the user.
         req.onload = function (e) {
             if (req.readyState == 4 && req.status == 200) {
-                swal('Success', 'The garage door button was pushed.', 'success')
+                swal('Success', 'The garage door button was pushed\n(as far as this app can tell).', 'success')
             } else {
                 console.log('Error', e); // If something went wrong, log that event to the console.
                 swal('Error', e, 'error')
