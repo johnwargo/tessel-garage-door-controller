@@ -44,7 +44,7 @@ The application should load and display the following output:
 
 At this point, you can open your browser of choice and navigate to the URL provided in the listed output (http://192.168.1.168:8080) to access the web application included with this project (shown below).
 
-![Tessel Garage Door Controller Web Application](http://johnwargo.com/files/tessel-gdc-web-app.png)
+![Tessel Garage Door Controller Web Application](http://johnwargo.com/files/tessel-gdc-web-app-640.png)
  
 When you press the button in the web app, you should see the blue user LED illuminate for half a second and hear the relay click. 
 
