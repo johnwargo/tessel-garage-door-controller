@@ -1,15 +1,15 @@
 {
-  "name": "weather_station",
+  "name": "Tessel garage door controller",
   "version": "0.0.1",
-  "description": "Tessel project",
-  "main": "index.js",
+  "description": "Tessel garage door controller",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": "www.github.com/johnwargo/tessel_weather_station",
+  "repository": "www.github.com/johnwargo/tessel_garage_door_controller",
   "keywords": [
-    "Weather Station"
+    "Garage door"
   ],
   "license": "MIT",
-  "readme": "A simple Tessel 2-based weather station with Weather Underground upload"
+  "readme": "A simple Tessel 2-based garage door controller"
 }
