@@ -19,6 +19,14 @@ const RELAY_DELAY = 500;  //milliseconds
 //Used to check status of a relay
 const TRUE_TEXT = 'true';
 
+const mimeTypes = {
+    "html": "text/html",
+    "jpeg": "image/jpeg",
+    "jpg": "image/jpeg",
+    "png": "image/png",
+    "js": "text/javascript",
+    "css": "text/css"};
+
 // Import the interface to Tessel hardware
 var tessel = require('tessel');
 // Import the relay module library

@@ -27,6 +27,10 @@ Hardware Setup
 ---------------------
 Follow the instructions on the [Tessel web site](http://tessel.github.io/t2-start/) to setup your development system and connect the Tessel board. Be sure to update the Tessel board's firmware to the latest version and connect the device to your Wi-Fi network. Next, disconnect the USB cable from the Tessel board then attach the relay module to the Tessel's module A port.
 
+Install the relay module's software library using the following command:
+
+	npm install relay-mono
+
 Software Installation
 -------------------- 
 Copy the project's source code to a folder on your development system, then open a terminal window and navigate to the folder where you copied the files.
